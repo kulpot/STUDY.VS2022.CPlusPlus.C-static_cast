@@ -1,22 +1,39 @@
 #include <iostream>
-#include <cstdlib>
+#include <cstdlib>	//c standard library - ex. sqaure root(sqrt)
 using std::cout;
 using std::endl;
 
 //------------------------ C++ static_cast ---------------------------------------------------------
 //ref link:https://www.youtube.com/watch?v=M4y5KnnlDhE&list=PLRwVmtr-pp05motkiTlDIuU5ZfoRr-kWC&index=3
 
-//static cast - (static means compile time)
-
-class Base {};
-class Derived1 : public Base {};
-class Derived2 : public Base {};
+//static cast - (static means compile time) , not recommended in pointers
+//static_cast doesnot have a runtime cost, it will just do it
+//dynamic cast should be recommended in casting hierarchies, and pointers
 
 void main()
-{
-	Base* b =																		new Derived1;	// static - Compile time but in runtime it will show
-	Derived1* d1 = b;
+{// casting explicitly with the type 
+	int i = 25;
+	//sqrt(i);	// 11 years ago this was an ERROR - i is an overloaded func, it can be long/float/double
+	sqrt(static_cast<double>(i)); // this expression: it takes as int returns into a double then sqrt of the double version will be invoke
+	// d1
+	double d = sqrt(static_cast<double>(i));
+	cout << d << endl;		// result: sqrt of 25 is 5
 }
+
+//##########################################
+//class Base {};
+//class Derived1 : public Base {};
+//class Derived2 : public Base {};
+//
+//void main()
+//{
+//	Base* b =																		new Derived1;	// static - Compile time but in runtime it will show
+//	//Derived1* d1 = b;	//error: b cant be recognize because its in static(compile time) requires static_cast
+//	Derived1* d1 = static_cast<Derived1*>(b); 
+//	// d1
+//	Derived2* d1 = static_cast<Derived2*>(b); //<---- error: Undefined 
+//	// d1	<---- error: Undefined 
+//}
 
 
 
