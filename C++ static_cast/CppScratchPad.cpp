@@ -14,7 +14,8 @@ class Derived2 : public Base {};
 
 void main()
 {
-
+	Base* b =																		new Derived1;	// static - Compile time but in runtime it will show
+	Derived1* d1 = b;
 }
 
 
