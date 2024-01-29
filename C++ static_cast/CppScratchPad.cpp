@@ -6,6 +6,8 @@ using std::endl;
 //------------------------ C++ static_cast ---------------------------------------------------------
 //ref link:https://www.youtube.com/watch?v=M4y5KnnlDhE&list=PLRwVmtr-pp05motkiTlDIuU5ZfoRr-kWC&index=3
 
+//static cast - (static means compile time)
+
 class Base {};
 class Derived1 : public Base {};
 class Derived2 : public Base {};
